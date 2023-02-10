@@ -1,15 +1,27 @@
 # NestJS Microservices Example
 
+This is using [pnpm](https://pnpm.io/) workspaces to manage the project.
+
 ## Libs
 
-- `math` - Math library
+- `math` - Shared library used by `math-service`.
 
 ## Services
 
-- `web-service` - NestJS web service - REST API
-- `math-service` - NestJS microservice - RabbitMQ
+- `web-service` - NestJS web service - REST API and persists to Postgres
+- `math-service` - NestJS microservice - Processes operations and responds with results
 
 ## Dashboards
 
 - `rabbitmq` - RabbitMQ dashboard - http://localhost:15672
-- `jaeger` - Jaeger dashboard - http://localhost:16686
+- `jaeger` - Jaeger dashboard - http://localhost:16686 - Use this to check the traces of the services
+
+## Running
+
+You can run them both at once:
+
+```sh
+$ pnpm --filter @acme-corp/math-service --filter @acme-corp/web-service run start:dev
+```
+
+Or just run them individually in separate tabs.
