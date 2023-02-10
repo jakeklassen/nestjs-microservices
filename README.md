@@ -18,6 +18,10 @@ This is using [pnpm](https://pnpm.io/) workspaces to manage the project.
 
 ## Running
 
+Run `docker-compose up -d` from the project root to start the services.
+
+Copy `.env.example` to `.env` in each service.
+
 You can run them both at once:
 
 ```sh

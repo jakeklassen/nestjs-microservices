@@ -1,10 +1,11 @@
-import { Module } from '@nestjs/common';
 import { OpenTelemetryModule } from '@metinseylan/nestjs-opentelemetry';
+import { Module } from '@nestjs/common';
+import { JaegerExporter } from '@opentelemetry/exporter-jaeger';
 import {
   SimpleSpanProcessor,
   TraceIdRatioBasedSampler,
 } from '@opentelemetry/sdk-trace-base';
-import { JaegerExporter } from '@opentelemetry/exporter-jaeger';
+import { ConfigModule } from './config/config.module';
 import { MathController } from './math/math.controller';
 
 @Module({
@@ -15,6 +16,7 @@ import { MathController } from './math/math.controller';
       serviceName: 'math-service',
       spanProcessor: new SimpleSpanProcessor(new JaegerExporter()),
     }),
+    ConfigModule,
   ],
   controllers: [MathController],
   providers: [],
