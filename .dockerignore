@@ -1,0 +1,7 @@
+Dockerfile
+.dockerignore
+.env
+.envrc
+node_modules
+npm-debug.log
+dist

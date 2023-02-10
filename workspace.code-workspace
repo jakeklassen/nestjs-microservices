@@ -1,0 +1,34 @@
+{
+  "folders": [
+    {
+      "name": "✨ root",
+      "path": "."
+    },
+    {
+      "name": "📦 math",
+      "path": "packages/math"
+    },
+    {
+      "name": "🖥️ web-service",
+      "path": "packages/web-service"
+    },
+    {
+      "name": "🖥️ math-service",
+      "path": "packages/math-service"
+    }
+  ],
+  "extensions": {
+    "recommendations": ["humao.rest-client"]
+  },
+  "settings": {
+    // "typescript.preferences.importModuleSpecifierEnding": "js",
+    "rest-client.enableTelemetry": false,
+    "rest-client.enableSendRequestCodeLens": true,
+    "rest-client.environmentVariables": {
+      "$shared": {},
+      "dev": {
+        "API_URL": "http://localhost:3000"
+      }
+    }
+  }
+}
